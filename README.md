@@ -1,0 +1,1 @@
+JS plugins excercise: https://grzegorz-turek.github.io/js-plugins/
