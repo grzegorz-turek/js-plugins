@@ -3,7 +3,7 @@
     // ********** Carousel Settings **********
     var elem = document.querySelector('.main-carousel');
     var flkty = new Flickity( elem, {
-        cellAlign: 'center',
+        cellAlign: 'left',
         wrapAround: true,
         autoPlay: true,
         hash: true,
