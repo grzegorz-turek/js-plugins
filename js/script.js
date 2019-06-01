@@ -6,7 +6,6 @@
 
     var slideList = '';
     for(var i = 0; i < slideData.length; i++){
-    //	console.log(slideData);
         slideList += Mustache.render(templateSlide, slideData[i]);
     }
 
