@@ -55,13 +55,20 @@
 
     // Initialize and add the map
     window.initMap = function() {
-        // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
-        // The map, centered at Uluru
+        // The location of Bialowieza
+        var bialowieza = slideData[0].coords;
+        // The map, centered at Bialowieza
         var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 4, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
+          document.getElementById('map'), {zoom: 5, center: bialowieza});
+        // The marker, positioned at Bialowieza
+        var marker = new google.maps.Marker({position: bialowieza, map: map});
+
+        /*
+        var location = slideData[i].coords;
+
+        var marker[i] = new google.maps.Marker({position: location[i], map: map});
+        console.log('bialowieza: ', bialowieza); // DEL
+*/
     };
 
 
