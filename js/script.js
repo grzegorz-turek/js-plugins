@@ -1,16 +1,16 @@
 'use strict';
 (function(){
     // ********** Mustache.js slide generator **********
-	var templateSlide = document.getElementById('template-single-slide').innerHTML;
-	Mustache.parse(templateSlide);
-    
+    var templateSlide = document.getElementById('template-single-slide').innerHTML;
+    Mustache.parse(templateSlide);
+
     var slideList = '';
-	for(var i = 0; i < slideData.length; i++){
-	//	console.log(slideData);
-		slideList += Mustache.render(templateSlide, slideData[i]);
-	}
-	
-	results.insertAdjacentHTML('beforeend', slideList);
+    for(var i = 0; i < slideData.length; i++){
+    //	console.log(slideData);
+        slideList += Mustache.render(templateSlide, slideData[i]);
+    }
+
+    results.insertAdjacentHTML('beforeend', slideList);
 
     // ********** Carousel Settings **********
     var elem = document.querySelector('.main-carousel');
