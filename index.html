@@ -10,28 +10,49 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <div class="main-carousel">
-            <div class="carousel-cell" id="carousel-cell1" style="background-image: url('images/001.jpg')">
-                <h1>What is Lorem ipsum?</h1>
-                <div class="container">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+        <div class="main-carousel" id="results"></div>
+        <script id="template-single-slide" type="x-tmpl-mustache">
+            <div class="carousel-cell" id="carousel-cell{{description}}" style="background-image: url('{{image}}')">
+                <div class="container">
+                    <h1>{{title}}</h1>
+                    <div>{{text}}</div>
+                </div>
             </div>
-            <div class="carousel-cell" id="carousel-cell2" style="background-image: url('images/002.jpg')">
-                <h1>Why do we use it?</h1>
-                <div class="container">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell3" style="background-image: url('images/003.jpg')">
-                <h1>Why do we use it?</h1>
-                <div class="container">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell4" style="background-image: url('images/004.jpg')">
-                <h1>Why do we use it?</h1>
-                <div class="container">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
-            </div>
-            <div class="carousel-cell" id="carousel-cell5" style="background-image: url('images/005.jpg')">
-                <h1>Why do we use it?</h1>
-                <div class="container">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</div>
-            </div>
-        </div>
+        </script>
+        <script>
+            var slideData = [
+                {
+                    image: 'images/001.jpg',
+                    title: 'What is Lorem ipsum?',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217s&apos; standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    description: 1
+                },
+                {
+                    image: 'images/002.jpg',
+                    title: 'What is Lorem ipsum?',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217s&apos; standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    description: 2
+                },
+                {
+                    image: 'images/003.jpg',
+                    title: 'What is Lorem ipsum?',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217s&apos; standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    description: 3
+                },
+                {
+                    image: 'images/004.jpg',
+                    title: 'What is Lorem ipsum?',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217s&apos; standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    description: 4
+                },
+                {
+                    image: 'images/005.jpg',
+                    title: 'What is Lorem ipsum?',
+                    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217s&apos; standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+                    description: 5
+                }
+            ];
+        </script>
         <div class="progress-bar"></div>
         <div class="button-group">
             <button class="button">Restart</button>

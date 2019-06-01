@@ -1,5 +1,17 @@
 'use strict';
 (function(){
+    // ********** Mustache.js slide generator **********
+	var templateSlide = document.getElementById('template-single-slide').innerHTML;
+	Mustache.parse(templateSlide);
+    
+    var slideList = '';
+	for(var i = 0; i < slideData.length; i++){
+	//	console.log(slideData);
+		slideList += Mustache.render(templateSlide, slideData[i]);
+	}
+	
+	results.insertAdjacentHTML('beforeend', slideList);
+
     // ********** Carousel Settings **********
     var elem = document.querySelector('.main-carousel');
     var flkty = new Flickity( elem, {
@@ -15,7 +27,7 @@
         // options
     });
 
-    // ********** Retart button **********
+    // ********** Carousel restart button **********
     var flkty = new Flickity('.main-carousel');
     var buttonGroup = document.querySelector('.button-group');
     var buttons = buttonGroup.querySelectorAll('.button');
@@ -31,7 +43,7 @@
     flkty.select( index );
     });
 
-    // ********** Scroll-bar **********
+    // ********** Carousel scroll-bar **********
     //var flkty = new Flickity('.main-carousel');
     var progressBar = document.querySelector('.progress-bar');
 
