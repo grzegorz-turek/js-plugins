@@ -63,7 +63,7 @@
     };
 */
 
-
+/*
     window.initMap = function() {
         var map = new google.maps.Map(document.getElementById('map'), {zoom: 5, center: slideData[0].coords});
 
@@ -71,7 +71,7 @@
         for (var i = 0; i < slideData.length; i++) {
             locations.push(slideData[i].coords);
         }
-        
+
         locations.forEach(function(value, index) {
             var marker = new google.maps.Marker({position: value, map: map});
             marker.addListener('click', function() {
@@ -80,4 +80,37 @@
             });
         });
     }
+*/
+
+    window.initMap = function() {
+        var index = 0;
+        var map ='';
+        var locations = [];
+        for (var i = 0; i < slideData.length; i++) {
+            locations.push(slideData[i].coords);
+        }
+        
+        //map = mapNavigation(map, locations, index, flkty);
+        mapNavigation(map, locations, index);
+        
+        flkty.on( 'change', function( index ) {
+            //map = mapNavigation(map, locations, index, flkty);
+            mapNavigation(map, locations, index);
+
+        });
+    }
+
+    //function mapNavigation(map, locations, index, flkty) {
+    function mapNavigation(map, locations, index) {
+        map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: locations[index] });
+        locations.forEach(function (value, index) {
+            var marker = new google.maps.Marker({ position: value, map: map });
+            marker.addListener('click', function () {
+                flkty.select(index);
+            });
+        });
+//        return map;
+    }
+    
 })();
+
