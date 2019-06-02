@@ -51,14 +51,13 @@
     height: 20px;
     width: 0;
     background: #333;
-    position: relative; // ADDED
-    top: -20px; // ADDED
+    position: relative;
+    top: -20px;
 }
 
 #map {
-    //height: calc(50vh - 20px); // REMOVED
-    height: 50vh;  // ADDED
+    height: 50vh;
     width: 100%;
-    position: relative; // ADDED
-    top: -20px; // ADDED
+    position: relative;
+    top: -20px;
 }

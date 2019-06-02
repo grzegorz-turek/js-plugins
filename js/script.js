@@ -51,28 +51,10 @@
         progressBar.style.width = progress * 100 + '%';
     });
 
-
-
-    // Initialize and add the map
     window.initMap = function() {
-        // The location of Bialowieza
-        var bialowieza = slideData[0].coords;
-        // The map, centered at Bialowieza
-        var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 5, center: bialowieza});
-        // The marker, positioned at Bialowieza
-        var marker = new google.maps.Marker({position: bialowieza, map: map});
-
-        /*
-        var location = slideData[i].coords;
-
-        var marker[i] = new google.maps.Marker({position: location[i], map: map});
-        console.log('bialowieza: ', bialowieza); // DEL
-*/
+        var map = new google.maps.Map(document.getElementById('map'), {zoom: 5, center: slideData[0].coords});
+        for (var i = 0; i < slideData.length; i++) {
+            var marker = new google.maps.Marker({position: slideData[i].coords, map: map});
+        }
     };
-
-
-
-
-
 })();
