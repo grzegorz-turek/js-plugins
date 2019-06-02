@@ -51,10 +51,32 @@
         progressBar.style.width = progress * 100 + '%';
     });
 
+/*
     window.initMap = function() {
         var map = new google.maps.Map(document.getElementById('map'), {zoom: 5, center: slideData[0].coords});
         for (var i = 0; i < slideData.length; i++) {
             var marker = new google.maps.Marker({position: slideData[i].coords, map: map});
+            marker.addListener('click', function() {
+                console.log('clickindex', i);
+            });
         }
     };
+*/
+
+    window.initMap = function() {
+        var map = new google.maps.Map(document.getElementById('map'), {zoom: 5, center: slideData[0].coords});
+
+        var locations = [];
+        for (var i = 0; i < slideData.length; i++) {
+            locations.push(slideData[i].coords);
+        }
+        
+        locations.forEach(function(value, index) {
+            var marker = new google.maps.Marker({position: value, map: map});
+            marker.addListener('click', function() {
+                console.log('index', index); // DEL
+                flkty.select( index );
+            });
+        });
+    }
 })();
