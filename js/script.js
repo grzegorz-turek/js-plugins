@@ -15,8 +15,6 @@
         hash: true,
         pageDots: false
     });
-    var flkty = new Flickity( '.main-carousel', {
-    });
 
     var flkty = new Flickity('.main-carousel');
     var buttonGroup = document.querySelector('.button-group');
